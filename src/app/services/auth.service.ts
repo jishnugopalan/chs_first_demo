@@ -27,6 +27,10 @@ export class AuthService {
   id:any
   myworkers:any
   workerid:any
+  wid:any
+  jid:any
+  bookingid:any
+  chatid:any
  
   constructor(private http: HttpClient, private helper: JwtHelperService, private storage: Storage,
     private plt: Platform, private alertController: AlertController) {
@@ -50,6 +54,80 @@ export class AuthService {
         }
       }
     });
+  }
+
+  viewmybookedworkers(credentials: any) {
+    return this.http.post(`${this.url}/api/viewmybookedworkers`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+
+  chatmsg(credentials: any) {
+    return this.http.post(`${this.url}/api/chatmsg`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewchat(credentials: any) {
+    return this.http.post(`${this.url}/api/viewchat`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewacceptedjobs(credentials: any) {
+    return this.http.post(`${this.url}/api/viewacceptedjobs`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  acceptworker(credentials: any) {
+    return this.http.post(`${this.url}/api/acceptworker`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewprofile(credentials: any) {
+    return this.http.post(`${this.url}/api/viewprofile`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewmybookedjobs(credentials: any) {
+    return this.http.post(`${this.url}/api/viewmybookedjobs`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewmybooking(credentials: any) {
+    return this.http.post(`${this.url}/api/viewmybooking`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  bookworker(credentials: any) {
+    return this.http.post(`${this.url}/api/bookworker`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
   }
   viewlocation(credentials: any) {
     return this.http.post(`${this.url}/api/viewlocation`, credentials).pipe(

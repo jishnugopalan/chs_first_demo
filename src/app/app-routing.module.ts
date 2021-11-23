@@ -75,6 +75,26 @@ const routes: Routes = [
     path: 'bookworker',
     loadChildren: () => import('./users/bookworker/bookworker.module').then( m => m.BookworkerPageModule)
   },
+  {
+    path: 'mybookings',
+    loadChildren: () => import('./worker/mybookings/mybookings.module').then( m => m.MybookingsPageModule)
+  },
+  {
+    path: 'viewjobdetails',
+    loadChildren: () => import('./worker/viewjobdetails/viewjobdetails.module').then( m => m.ViewjobdetailsPageModule)
+  },
+  {
+    path: 'myjobs',
+    loadChildren: () => import('./worker/myjobs/myjobs.module').then( m => m.MyjobsPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'bookedworkers',
+    loadChildren: () => import('./users/bookedworkers/bookedworkers.module').then( m => m.BookedworkersPageModule)
+  },
 ];
 
 @NgModule({

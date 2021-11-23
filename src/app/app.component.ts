@@ -23,10 +23,12 @@ export class AppComponent {
   public UserPages = [
     { title: 'Home', url: 'demo', icon: 'home' },
     { title: 'Become Worker', url: 'workeraccout', icon: 'briefcase' },
+    { title: 'Workers', url: 'joblist', icon: 'person' },
+    { title: 'My Workers', url: 'bookedworkers', icon: 'person' },
+
 
     { title: 'Settings', url: 'settings', icon: 'settings' },
     { title: 'About', url: 'about', icon: 'information' },
-    { title: 'Workers', url: 'joblist', icon: 'person' },
 
     //{ title: 'Home', url: 'demo', icon: 'home' },
   
@@ -45,6 +47,10 @@ export class AppComponent {
   public WorkerPages = [
     { title: 'Home', url: 'demo', icon: 'home' },
     { title: 'Workers', url: 'joblist', icon: 'person' },
+    { title: 'My Bookings', url: 'mybookings', icon: 'person' },
+    { title: 'My Jobs', url: 'myjobs', icon: 'hammer' },
+
+
 
    
 

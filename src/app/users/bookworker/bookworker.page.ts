@@ -38,8 +38,47 @@ export class BookworkerPage implements OnInit {
   
   
   mapElement:any;
+  s=false;
+
   constructor(private authService:AuthService,private router:Router,public alertController: AlertController,private geolocation: Geolocation,private nativeGeocoder: NativeGeocoder) { }
 
+  async bookworker(id){
+ console.log(id)
+ if(id==this.authService.user.id){
+  const alert = await this.alertController.create({
+    header: 'Alert',
+    subHeader: 'Sorry',
+    message: 'You cannot book this person',
+    buttons: ['OK']
+  });
+  await alert.present();
+}
+else{
+  this.authService.bookworker({"userid":this.authService.user.id,"workerid":id}).subscribe(async (res:any)=>{
+    console.log(res)
+    var bookingid=res._id;
+    console.log(bookingid)
+    this.s=true
+    console.log(this.s)
+    if(this.s==true){
+
+      const alert = await this.alertController.create({
+        header: 'Alert',
+        subHeader: 'Requested Successfully',
+        message: 'You are successfully requested for the service',
+        buttons: ['OK']
+      });
+      await alert.present();
+      var Dt = Date.now();
+      console.log(Dt);
+      this.authService.notification({"userid":id,"content":'Requested for your service',"from":this.authService.name,"datetime":Dt,"bookingid":bookingid,"notificationtype":"booked"}).subscribe(res=>{
+        console.log(res)
+      })
+      this.s=false
+    }
+  })
+}
+  }
 
   // loadMap() {
   //   this.geolocation.getCurrentPosition().then((resp) => {
