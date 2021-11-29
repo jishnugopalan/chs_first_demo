@@ -17,6 +17,26 @@ details=[]
     this.authService.chatid=userid
     this.router.navigateByUrl("chat")
   }
+  addbill(userid,bookingid){
+   this.authService.bookingid=bookingid;
+   this.authService.userid=userid;
+   this.router.navigateByUrl("sendbill")
+   
+  }
+  complete(bookingid){
+   console.log(bookingid)
+   this.authService.markascomplete({"bookingid":bookingid}).subscribe(async (res:any)=>{
+     console.log(res)
+     const toast = await this.toastController.create({
+      message: 'Marked as completed',
+      duration: 2000
+    });
+    toast.present();
+    this.ngOnInit()
+
+   })
+  }
+
   ngOnInit() {
     this.authService.viewacceptedjobs({"workerid":this.authService.user.id}).subscribe((res:any)=>{
       console.log(res)

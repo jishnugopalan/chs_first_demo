@@ -23,7 +23,9 @@
     </ion-item>
     <ion-item>
       <ion-button (click)="chatnow(p.workerdetails[0]._id)">Chat</ion-button>
-      <ion-button>Send Bill</ion-button>
+      <ion-button (click)="addbill(p.workerdetails[0]._id,p._id)">Send Bill</ion-button>
+      <ion-button (click)="complete(p._id)">Marked as complete</ion-button>
+
     </ion-item>
   </ion-card>
 </ion-content>

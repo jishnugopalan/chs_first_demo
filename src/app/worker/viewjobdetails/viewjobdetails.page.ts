@@ -31,7 +31,16 @@ export class ViewjobdetailsPage implements OnInit {
    })
   }
   reject(){
-    
+    this.authService.rejectbooking({"bookingid":this.authService.bookingid}).subscribe(async (res:any)=>{
+      console.log(res)
+      const toast = await this.toastController.create({
+       message: 'Work rejected',
+       duration: 2000
+     });
+     toast.present();
+     this.router.navigateByUrl("mybookings")
+     //this.ngOnInit()
+    })
    }
   ngOnInit() {
     this.authService.viewprofile({"_id":this.authService.jid}).subscribe((res:any)=>{

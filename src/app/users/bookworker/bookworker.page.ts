@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 var loclat:any;
 var loclong:any;
+var n:any
 declare var google;
 @Component({
   selector: 'app-bookworker',
@@ -128,6 +129,11 @@ else{
       this.longitude = res.longitude;
     //  this.loadMap();
      
+})
+this.authService.viewreview({"workerid":this.authService.workerid}).subscribe((res:any)=>{
+  console.log(res)
+  n=res
+this.review=n
 })
   }
 

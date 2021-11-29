@@ -95,6 +95,34 @@ const routes: Routes = [
     path: 'bookedworkers',
     loadChildren: () => import('./users/bookedworkers/bookedworkers.module').then( m => m.BookedworkersPageModule)
   },
+  {
+    path: 'sendbill',
+    loadChildren: () => import('./worker/sendbill/sendbill.module').then( m => m.SendbillPageModule)
+  },
+  {
+    path: 'viewbill',
+    loadChildren: () => import('./users/viewbill/viewbill.module').then( m => m.ViewbillPageModule)
+  },
+  {
+    path: 'myearnings',
+    loadChildren: () => import('./worker/myearnings/myearnings.module').then( m => m.MyearningsPageModule)
+  },
+  {
+    path: 'addreview',
+    loadChildren: () => import('./users/addreview/addreview.module').then( m => m.AddreviewPageModule)
+  },
+  {
+    path: 'editprofile',
+    loadChildren: () => import('./editprofile/editprofile.module').then( m => m.EditprofilePageModule)
+  },
+  {
+    path: 'changepassword',
+    loadChildren: () => import('./changepassword/changepassword.module').then( m => m.ChangepasswordPageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+  },
 ];
 
 @NgModule({

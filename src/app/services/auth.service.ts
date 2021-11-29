@@ -31,6 +31,7 @@ export class AuthService {
   jid:any
   bookingid:any
   chatid:any
+  userid:any
  
   constructor(private http: HttpClient, private helper: JwtHelperService, private storage: Storage,
     private plt: Platform, private alertController: AlertController) {
@@ -56,6 +57,135 @@ export class AuthService {
     });
   }
 
+  rejectbooking(credentials: any) {
+    return this.http.post(`${this.url}/api/rejectbooking`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  updatepassword(credentials: any) {
+    return this.http.post(`${this.url}/api/updatepassword`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  checkpassword(credentials: any) {
+    return this.http.post(`${this.url}/api/checkpassword`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+
+  updateimage(credentials: any) {
+    return this.http.post(`${this.url}/api/updateimage`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  updatephone(credentials: any) {
+    return this.http.post(`${this.url}/api/updatephone`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  updatename(credentials: any) {
+    return this.http.post(`${this.url}/api/updatename`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewreview(credentials: any) {
+    return this.http.post(`${this.url}/api/viewreview`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  addreview(credentials: any) {
+    return this.http.post(`${this.url}/api/addreview`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  markascomplete(credentials: any) {
+    return this.http.post(`${this.url}/api/markascomplete`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  myearnings(credentials: any) {
+    return this.http.post(`${this.url}/api/myearnings`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  deletebill(credentials: any) {
+    return this.http.post(`${this.url}/api/deletebill`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  checkpayment(credentials: any) {
+    return this.http.post(`${this.url}/api/checkpayment`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  savepayment(credentials: any) {
+    return this.http.post(`${this.url}/api/savepayment`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  getkeyid(credentials: any) {
+    return this.http.post(`${this.url}/api/getkeyid`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewbill(credentials: any) {
+    return this.http.post(`${this.url}/api/viewbill`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  addbill(credentials: any) {
+    return this.http.post(`${this.url}/api/addbill`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
   viewmybookedworkers(credentials: any) {
     return this.http.post(`${this.url}/api/viewmybookedworkers`, credentials).pipe(
       catchError(e => {

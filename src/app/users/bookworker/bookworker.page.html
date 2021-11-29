@@ -49,4 +49,22 @@
   
   <ion-text><b>Location</b></ion-text>
  <div #mapElement class="map" id="map"></div>
+ <ion-text><h3>Reviews</h3></ion-text>
+  <ion-card *ngFor="let r of review">
+   
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{r.userdetails[0].profile_pic}}">
+      </ion-avatar>
+      <ion-label><b>{{r.userdetails[0].name}}</b></ion-label>
+    </ion-item>
+    <ion-item>
+      {{r.star}}<ion-icon name="star" color="warning"></ion-icon>
+      
+    </ion-item>
+    <ion-item>
+      <ion-text>{{r.commend}}</ion-text>
+    </ion-item>
+
+  </ion-card>
 </ion-content>

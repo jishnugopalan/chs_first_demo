@@ -11,6 +11,19 @@ export class BookedworkersPage implements OnInit {
 details=[]
   constructor(private authService:AuthService,private router:Router) { }
 
+  addreview(workerid){
+  console.log(workerid)
+  this.authService.workerid=workerid
+  this.router.navigateByUrl("addreview")
+  }
+  viewbill(bookingid,workerid){
+    this.authService.bookingid=bookingid;
+    this.authService.workerid=workerid;
+    //this.authService.userid=userid;
+    this.router.navigateByUrl("viewbill")
+
+    
+   }
   ngOnInit() {
     this.authService.viewmybookedworkers({"userid":this.authService.user.id}).subscribe((res:any)=>{
       console.log(res)

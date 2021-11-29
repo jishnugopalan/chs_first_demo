@@ -11,7 +11,8 @@
 
 <ion-text color="danger">
 <h2>Guide Lines</h2>
-Please enter correct informations and document
+Please enter correct informations and document.For accepting online payments you have to create account in razorpay and generate keyid and fill in the
+form. <a href="https://razorpay.com/">Click here to create razorpay account</a>
 </ion-text>
     <form [formGroup]="workerForm" (ngSubmit)="submit()">
       <ion-card>
@@ -66,6 +67,13 @@ Please enter correct informations and document
         </ion-item>
       </ion-card>
       <ion-card>
+        <ion-item>
+          <ion-label  color="primary" position="floating">Razorpay Key ID</ion-label>
+          <ion-input formControlName="keyid" inputmode="text"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+      
         <ion-item>
           <ion-textarea placeholder="Description about the job" formControlName="job_description" ></ion-textarea>
         </ion-item>

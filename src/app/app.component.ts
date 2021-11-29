@@ -49,6 +49,8 @@ export class AppComponent {
     { title: 'Workers', url: 'joblist', icon: 'person' },
     { title: 'My Bookings', url: 'mybookings', icon: 'person' },
     { title: 'My Jobs', url: 'myjobs', icon: 'hammer' },
+    { title: 'My Earnings', url: 'myearnings', icon: 'cash' },
+
 
 
 

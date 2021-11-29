@@ -25,6 +25,7 @@ export class WorkeraccoutPage implements OnInit {
       job_verification: ['', [Validators.required]],
        //job_document: ['', [Validators.required]],
       job_description: ['', [Validators.required]],
+      keyid:['',Validators.required]
   });
 }
 get job_category(){
@@ -47,6 +48,9 @@ get job_verification(){
 // }
 get job_description(){
   return this.workerForm.get('job_description');
+}
+get keyid(){
+  return this.workerForm.get('keyid');
 }
 async encodeImageFileAsURL() {
   console.log("err")
