@@ -26,7 +26,8 @@ export class AppComponent {
     { title: 'Workers', url: 'joblist', icon: 'person' },
     { title: 'My Workers', url: 'bookedworkers', icon: 'person' },
 
-
+    { title: 'Notifications', url: 'notification', icon: 'notifications' },
+   
     { title: 'Settings', url: 'settings', icon: 'settings' },
     { title: 'About', url: 'about', icon: 'information' },
 
@@ -49,13 +50,17 @@ export class AppComponent {
     { title: 'Workers', url: 'joblist', icon: 'person' },
     { title: 'My Bookings', url: 'mybookings', icon: 'person' },
     { title: 'My Jobs', url: 'myjobs', icon: 'hammer' },
+    { title: 'My Workers', url: 'bookedworkers', icon: 'person' },
+
     { title: 'My Earnings', url: 'myearnings', icon: 'cash' },
+    { title: 'Notifications', url: 'notification', icon: 'notifications' },
+
 
 
 
 
    
-
+   
     { title: 'Settings', url: 'settings', icon: 'settings' },
     { title: 'About', url: 'about', icon: 'information' },
     //{ title: 'Home', url: 'demo', icon: 'home' },
@@ -72,14 +77,19 @@ export class AppComponent {
   ) {
     this.initializeApp();
   }
-
+count
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
 
       this.authService.authenticationState.subscribe(state => {
         if (state) {
+          this.authService.countnotification({"userid":this.authService.user.id}).subscribe((res:any)=>{
+            console.log(res)
+            this.count=res
+          })
           let userinfo=this.authService.user
           this.authService.profile_pic=userinfo.profile_pic
           this.authService.name=userinfo.name

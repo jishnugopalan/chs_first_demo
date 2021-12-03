@@ -38,8 +38,8 @@ export class ViewjobdetailsPage implements OnInit {
        duration: 2000
      });
      toast.present();
-     this.router.navigateByUrl("mybookings")
-     //this.ngOnInit()
+     ///this.router.navigateByUrl("mybookings")
+     this.ngOnInit()
     })
    }
   ngOnInit() {

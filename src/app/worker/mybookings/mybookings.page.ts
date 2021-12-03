@@ -68,8 +68,9 @@ workerdetails(wid)
 {
   console.log("eent")
   console.log(wid)
-  this.authService.wid=wid
-  this.router.navigateByUrl("/viewworkerdetails")
+  this.authService.workerid=wid
+  console.log(wid)
+  //this.router.navigateByUrl("bookworker")
 
 }
 jobdetails(wid,bookingid)
