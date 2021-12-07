@@ -33,6 +33,8 @@
     </ion-item>
     <ion-item *ngIf="p.worker_status==2">
       <ion-button (click)="addreview(p.workerdetails[0]._id)">Add Review</ion-button>
+      <ion-button (click)="addcomplaint(p.workerdetails[0]._id)">Register a complaint</ion-button>
+
       
     </ion-item>
   </ion-card>

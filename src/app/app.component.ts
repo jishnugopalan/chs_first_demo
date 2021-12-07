@@ -23,11 +23,10 @@ export class AppComponent {
   public UserPages = [
     { title: 'Home', url: 'demo', icon: 'home' },
     { title: 'Become Worker', url: 'workeraccout', icon: 'briefcase' },
-    { title: 'Workers', url: 'joblist', icon: 'person' },
+    // { title: 'Jobs', url: 'joblist', icon: 'bag' },
     { title: 'My Workers', url: 'bookedworkers', icon: 'person' },
-
     { title: 'Notifications', url: 'notification', icon: 'notifications' },
-   
+    { title: 'Complaints', url: 'viewcomplaints', icon: 'ticket' },
     { title: 'Settings', url: 'settings', icon: 'settings' },
     { title: 'About', url: 'about', icon: 'information' },
 
@@ -38,8 +37,7 @@ export class AppComponent {
     { title: 'Home', url: 'adminhome', icon: 'home' },
     { title: 'Add Category', url: 'addcategory', icon: 'add-circle' },
     { title: 'Approve Workers', url: 'viewworkers', icon: 'pencil' },
-
-
+    { title: 'Complaints', url: 'viewcomplaintbyadmin', icon: 'ticket' },
     { title: 'Settings', url: 'settings', icon: 'settings' },
     { title: 'About', url: 'about', icon: 'information' },
 
@@ -47,21 +45,17 @@ export class AppComponent {
 
   public WorkerPages = [
     { title: 'Home', url: 'demo', icon: 'home' },
-    { title: 'Workers', url: 'joblist', icon: 'person' },
-    { title: 'My Bookings', url: 'mybookings', icon: 'person' },
+    // { title: 'Jobs', url: 'joblist', icon: 'bag' },
+    { title: 'My Bookings', url: 'mybookings', icon: 'bag-check' },
     { title: 'My Jobs', url: 'myjobs', icon: 'hammer' },
     { title: 'My Workers', url: 'bookedworkers', icon: 'person' },
-
     { title: 'My Earnings', url: 'myearnings', icon: 'cash' },
     { title: 'Notifications', url: 'notification', icon: 'notifications' },
+    { title: 'Complaints', url: 'viewcomplaints', icon: 'ticket' },
+    { title: 'Update Worker Details', url: 'updatedetails', icon: 'person-circle' },
 
-
-
-
-
-   
-   
     { title: 'Settings', url: 'settings', icon: 'settings' },
+
     { title: 'About', url: 'about', icon: 'information' },
     //{ title: 'Home', url: 'demo', icon: 'home' },
   

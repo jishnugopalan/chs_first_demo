@@ -15,6 +15,11 @@ not=[]
       console.log(res)
       this.not=res
     })
+    this.authService.updatenotification({"userid":this.authService.user.id}).subscribe((res:any)=>{
+      console.log(res)
+      
+
+    })
     
   }
 

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AuthService } from '../services/auth.service';
 
-
+var jobs:any
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.page.html',
@@ -11,8 +12,9 @@ import { AuthService } from '../services/auth.service';
 export class DemoPage implements OnInit {
   first=false
   public status:boolean 
+  joblist=[]
 
-  constructor(private geolocation: Geolocation,private authService:AuthService) { }
+  constructor(private geolocation: Geolocation,private authService:AuthService,private router:Router) { }
 
 
   public change(){
@@ -30,7 +32,16 @@ export class DemoPage implements OnInit {
       })
     }
   }
-  
+  public viewWorkers(cat){
+    console.log(cat)
+    this.authService.viewmyworkers({"category":cat}).subscribe(res=>{
+      console.log(res)
+      this.authService.myworkers=res;
+      console.log(this.authService.myworkers)
+      this.router.navigateByUrl("/workerslist");
+      
+    });
+    }
 
   ngOnInit() {
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -59,6 +70,14 @@ export class DemoPage implements OnInit {
         this.status=true
       }
     
+    })
+    this.authService.viewcategory('').subscribe(res=>{
+      console.log(res)
+      
+       jobs= res;
+    
+       console.log(jobs)
+       this.joblist=jobs;
     })
   }
 

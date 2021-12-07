@@ -57,8 +57,107 @@ export class AuthService {
     });
   }
 
-  viewnotification(credentials: any) {
-    return this.http.post(`${this.url}/api/rejectbooking`, credentials).pipe(
+  updatepass(credentials: any) {
+    return this.http.post(`${this.url}/api/updatepass`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  findphone(credentials: any) {
+    return this.http.post(`${this.url}/api/findphone`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+
+  findemail(credentials: any) {
+    return this.http.post(`${this.url}/api/findemail`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  updatedescription(credentials: any) {
+    return this.http.post(`${this.url}/api/updatedescription`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  updatesalary(credentials: any) {
+    return this.http.post(`${this.url}/api/updatesalary`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  updateendtime(credentials: any) {
+    return this.http.post(`${this.url}/api/updateendtime`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  updatestarttime(credentials: any) {
+    console.log("err1")
+    return this.http.post(`${this.url}/api/updatestarttime`, credentials).pipe(
+      catchError(e => {
+        console.log("err2")
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  activateaccount(credentials: any) {
+    return this.http.post(`${this.url}/api/activateaccount`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  disableaccount(credentials: any) {
+    return this.http.post(`${this.url}/api/disableaccount`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  sendreplay(credentials: any) {
+    return this.http.post(`${this.url}/api/sendreplay`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewcomplaints(credentials: any) {
+    return this.http.post(`${this.url}/api/viewcomplaints`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  viewcomplaintbyid(credentials: any) {
+    return this.http.post(`${this.url}/api/viewcomplaintbyid`, credentials).pipe(
+      catchError(e => {
+        this.showAlert(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+  addcomplaint(credentials: any) {
+    return this.http.post(`${this.url}/api/addcomplaint`, credentials).pipe(
       catchError(e => {
         this.showAlert(e.error.msg);
         throw new Error(e);

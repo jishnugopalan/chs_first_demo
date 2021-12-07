@@ -24,6 +24,11 @@ details=[]
 
     
    }
+   addcomplaint(workerid){
+    console.log(workerid)
+    this.authService.workerid=workerid
+    this.router.navigateByUrl("complaints")
+   }
   ngOnInit() {
     this.authService.viewmybookedworkers({"userid":this.authService.user.id}).subscribe((res:any)=>{
       console.log(res)

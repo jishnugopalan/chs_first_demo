@@ -127,6 +127,30 @@ const routes: Routes = [
     path: 'notification',
     loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
   },
+  {
+    path: 'complaints',
+    loadChildren: () => import('./complaints/complaints.module').then( m => m.ComplaintsPageModule)
+  },
+  {
+    path: 'viewcomplaints',
+    loadChildren: () => import('./viewcomplaints/viewcomplaints.module').then( m => m.ViewcomplaintsPageModule)
+  },
+  {
+    path: 'viewcomplaintbyadmin',
+    loadChildren: () => import('./admin/viewcomplaintbyadmin/viewcomplaintbyadmin.module').then( m => m.ViewcomplaintbyadminPageModule)
+  },
+  {
+    path: 'viewworker',
+    loadChildren: () => import('./admin/viewworker/viewworker.module').then( m => m.ViewworkerPageModule)
+  },
+  {
+    path: 'updatedetails',
+    loadChildren: () => import('./worker/updatedetails/updatedetails.module').then( m => m.UpdatedetailsPageModule)
+  },
+  {
+    path: 'forgotpassword',
+    loadChildren: () => import('./forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
+  },
 ];
 
 @NgModule({

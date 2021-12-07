@@ -17,4 +17,25 @@
         <ion-toggle [(ngModel)]="status" (ionChange)="change()"></ion-toggle>
     </ion-item>
 
+    <ion-card>
+      <img src="../../assets/img/worker1.jpg">
+   
+      <ion-card-content>
+        <ion-list *ngFor="let x of joblist">
+          <ion-item (click)="viewWorkers(this.x.category)">
+            <ion-text>
+              {{ x.category }}
+            </ion-text>
+           
+          </ion-item>
+                </ion-list>
+       
+    
+  
+      </ion-card-content>
+     
+     
+      
+    </ion-card>
+
 </ion-content>
